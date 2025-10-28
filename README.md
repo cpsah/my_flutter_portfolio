@@ -18,6 +18,10 @@ samples, guidance on mobile development, and a full API reference.
 ## Tools
 - App Icon Generator
   https://www.appicon.co/
+- The best Favicon Generator (completely free) - favicon.io
+  https://favicon.io/
+- Crop a circle in image online - free tool
+  https://crop-circle.imageonline.co/
 - Flutter Icon Generator
   https://fluttericon.com/
 - Online Flutter/Dart Formatter
