@@ -42,8 +42,8 @@ class _TabsWebState extends State<TabsWeb> {
                 fontSize: 25.0,
                 fontWeight: FontWeight.w500,
                 decoration: TextDecoration.underline,
-                decorationThickness: 1,
-                decorationColor: Colors.black,
+                decorationThickness: 1.5,
+                decorationColor: Colors.tealAccent,
               )
             : GoogleFonts.oswald(
                 color: Colors.black,
@@ -55,3 +55,38 @@ class _TabsWebState extends State<TabsWeb> {
     );
   }
 }
+
+class SansBold extends StatelessWidget {
+  final String text;
+  final double size;
+  const SansBold(this.text, this.size, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+        fontSize: size,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+}
+
+class Sans extends StatelessWidget {
+  final String text;
+  final double size;
+  const Sans(this.text, this.size, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+        fontSize: size,
+      ),
+    );
+  }
+}
+
+
