@@ -76,7 +76,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       children: [
                         Icon(Icons.email),
                         SizedBox(width: 20),
-                        Sans("chinmaysah@gmail.com", 15.0)
+                        Sans("chinmaysah@gmail.com", 15.0),
                       ],
                     ),
                     SizedBox(height: 10.0),
@@ -84,7 +84,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       children: [
                         Icon(Icons.call),
                         SizedBox(width: 20),
-                        Sans("+91 1234567892", 15.0)
+                        Sans("+91 1234567892", 15.0),
                       ],
                     ),
                     SizedBox(height: 10.0),
@@ -92,7 +92,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       children: [
                         Icon(Icons.location_pin),
                         SizedBox(width: 20),
-                        Sans("679633", 15.0)
+                        Sans("679633", 15.0),
                       ],
                     ),
                   ],
@@ -115,6 +115,118 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             ),
           ),
           // Second Page
+          SizedBox(
+            height: heightDevice / 1.5,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Image.asset(
+                    "assets/web.jpg",
+                    height: heightDevice / 3.0,
+                  ),
+                ),
+                SizedBox(width: 20.0),
+                Flexible(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SansBold("About Me", 40.0),
+                      SizedBox(height: 20.0),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Sans(
+                            "I am a Flutter developer with experience in building cross-platform mobile applications. I have a strong passion for creating beautiful and functional user interfaces using Flutter. I am proficient in Dart programming language and have experience working with various Flutter packages and plugins. I am also familiar with RESTful APIs, Firebase, and other backend technologies. I enjoy collaborating with designers and other developers to create seamless user experiences.",
+                            18.0,
+                          ),
+                          SizedBox(height: 10.0),
+                          Sans(
+                            "I strive to ensure astounding performance with state of the art security for Android, Ios, Web, Mac, Linux and Windows.",
+                            18.0,
+                          ),
+                          // Add more children here
+                          SizedBox(height: 10.0),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.tealAccent,
+                                    style: BorderStyle.solid,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                padding: EdgeInsets.all(7.0),
+                                child: Sans("Flutter", 15.0),
+                              ),
+                              SizedBox(width: 10.0),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.tealAccent,
+                                    style: BorderStyle.solid,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                padding: EdgeInsets.all(7.0),
+                                child: Sans("Firebase", 15.0),
+                              ),
+                              SizedBox(width: 10.0),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.tealAccent,
+                                    style: BorderStyle.solid,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                padding: EdgeInsets.all(7.0),
+                                child: Sans("Android", 15.0),
+                              ),
+                              SizedBox(width: 10.0),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.tealAccent,
+                                    style: BorderStyle.solid,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                padding: EdgeInsets.all(7.0),
+                                child: Sans("Ios", 15.0),
+                              ),
+                              SizedBox(width: 10.0),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.tealAccent,
+                                    style: BorderStyle.solid,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                padding: EdgeInsets.all(7.0),
+                                child: Sans("Web", 15.0),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
