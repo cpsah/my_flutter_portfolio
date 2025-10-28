@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:my_flutter_portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -43,7 +42,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
       ),
       body: ListView(
         children: [
-          // First Page
+          // First Section
           SizedBox(
             height: heightDevice - 56.0, // Subtracting AppBar height
             child: Row(
@@ -114,7 +113,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               ],
             ),
           ),
-          // Second Page
+          // Second Section
           SizedBox(
             height: heightDevice / 1.5,
             child: Row(
@@ -224,6 +223,86 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          // Third Section
+          Container(
+            height: heightDevice/1.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SansBold("What I do", 40.0),
+                SizedBox(height: 20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Card(
+                      elevation: 30.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/webL.png",
+                            height: 200,
+                            width: 200,
+                            ),
+                            SizedBox(height: 10.0),
+                            SansBold("Web development", 15),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 30.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/app.png",
+                              height: 200,
+                              width: 200,
+                              fit: BoxFit.contain,
+                            ),
+                            SizedBox(height: 10.0),
+                            SansBold("App development", 15),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 30.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/firebase.png",
+                              height: 200,
+                              width: 200,
+                            ),
+                            SizedBox(height: 10.0),
+                            SansBold("Back-end development", 15),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
