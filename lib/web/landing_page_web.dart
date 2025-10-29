@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_flutter_portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -227,8 +228,8 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             ),
           ),
           // Third Section
-          Container(
-            height: heightDevice/1.3,
+          SizedBox(
+            height: heightDevice / 1.3,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -248,9 +249,10 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.asset("assets/webL.png",
-                            height: 200,
-                            width: 200,
+                            Image.asset(
+                              "assets/webL.png",
+                              height: 200,
+                              width: 200,
                             ),
                             SizedBox(height: 10.0),
                             SansBold("Web development", 15),
@@ -269,7 +271,8 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.asset("assets/app.png",
+                            Image.asset(
+                              "assets/app.png",
                               height: 200,
                               width: 200,
                               fit: BoxFit.contain,
@@ -291,7 +294,8 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.asset("assets/firebase.png",
+                            Image.asset(
+                              "assets/firebase.png",
                               height: 200,
                               width: 200,
                             ),
@@ -302,7 +306,57 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       ),
                     ),
                   ],
-                )
+                ),
+              ],
+            ),
+          ),
+          // Fourth section
+          SizedBox(
+            height: heightDevice,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SansBold("Contact Me", 40.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Sans("First Name", 16.0),
+                            SizedBox(height: 5),
+                            SizedBox(
+                              width: 350,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: "Enter first name",
+                                  hintStyle: GoogleFonts.poppins(fontSize: 14),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.teal),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.tealAccent,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
