@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabsWeb extends StatefulWidget {
@@ -36,7 +37,7 @@ class _TabsWebState extends State<TabsWeb> {
         duration: const Duration(milliseconds: 100),
         curve: Curves.elasticIn,
         style: isSelected
-            ? GoogleFonts.oswald(
+            ? GoogleFonts.roboto(
                 shadows: [Shadow(color: Colors.black, offset: Offset(0, -5))],
                 color: Colors.transparent,
                 fontSize: 25.0,
@@ -45,7 +46,7 @@ class _TabsWebState extends State<TabsWeb> {
                 decorationThickness: 1.5,
                 decorationColor: Colors.tealAccent,
               )
-            : GoogleFonts.oswald(
+            : GoogleFonts.roboto(
                 color: Colors.black,
                 fontSize: 23.0,
                 fontWeight: FontWeight.w500,
@@ -84,14 +85,14 @@ class Sans extends StatelessWidget {
 class TextForm extends StatelessWidget {
   final String heading;
   final double width;
-  final String hitText;
-  final int? maxLine;
+  final String hintText;
+  final int? maxLines;
   const TextForm({
     super.key,
     required this.heading,
     required this.width,
-    required this.hitText,
-    this.maxLine,
+    required this.hintText,
+    this.maxLines,
   });
 
   @override
@@ -100,23 +101,43 @@ class TextForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Sans(heading, 16.0),
-        SizedBox(height: 5),
+        SizedBox(height: 5.0),
         SizedBox(
           width: width,
           child: TextFormField(
-            maxLines: maxLine, // null means unlimited lines
+            /*inputFormatters: [
+              LengthLimitingTextInputFormatter(200),
+              FilteringTextInputFormatter.allow(
+                RegExp(r'[a-zA-Z]', caseSensitive: false),
+              ),
+            ],*/
+            maxLines: maxLines, // null means unlimited lines
             decoration: InputDecoration(
-              hintText: hitText,
-              hintStyle: GoogleFonts.poppins(fontSize: 14),
+              hintText: hintText,
+              hintStyle: GoogleFonts.poppins(fontSize: 14.0),
+              focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.teal),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.tealAccent, width: 2),
+                borderSide: BorderSide(color: Colors.tealAccent, width: 2.0),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
             ),
+            validator: (text) {
+              if(RegExp("\\bsahi\\b", caseSensitive: false).hasMatch(text ?? '')) {
+                return 'Inappropriate word detected';
+              }
+              if (text == null || text.isEmpty) {
+                return 'Required field';
+              }
+              return null;
+            },
+            // autovalidateMode: AutovalidateMode.onUserInteraction, // better use on submit
           ),
         ),
       ],

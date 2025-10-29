@@ -323,16 +323,16 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   children: [
                     Column(
                       children: [
-                        TextForm(heading: "First Name", width: 350, hitText: "Enter first name"),
-                        SizedBox(height: 15.0),
-                        TextForm(heading: "Email", width: 350, hitText: "Enter email"),
+                        TextForm(heading: "First Name", width: 350.0, hintText: "Enter first name"),
+                        SizedBox(height: 5.0),
+                        TextForm(heading: "Email", width: 350.0, hintText: "Enter email"),
                       ],
                     ),
                     Column(
                       children: [
-                        TextForm(heading: "Last Name", width: 350, hitText: "Enter last name"),
-                        SizedBox(height: 15.0),
-                        TextForm(heading: "Phone number", width: 350, hitText: "Enter phone number"),
+                        TextForm(heading: "Last Name", width: 350.0, hintText: "Enter last name"),
+                        SizedBox(height: 5.0),
+                        TextForm(heading: "Phone number", width: 350.0, hintText: "Enter phone number"),
                       ],
                     ),
                   ],
@@ -340,8 +340,19 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 TextForm(
                   heading: "Message",
                   width: widthDevice/1.5,
-                  hitText: "Enter your message",
-                  maxLine: 5,
+                  hintText: "Enter your message",
+                  maxLines: 5,
+                ),
+                MaterialButton(
+                  elevation: 20.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  height: 60.0,
+                  minWidth: 200.0,
+                  color: Colors.tealAccent,
+                  child: SansBold("Submit", 20.0),
+                  onPressed: () {},
                 ),
               ],
             ),
