@@ -13,6 +13,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
+    var widthDevice  = MediaQuery.of(context).size.width;
     /*
     Scaffold is a Flutter widget that provides a basic visual layout structure for an app.
     It includes standard UI elements like an app bar, drawer, floating action button, and a body for your main content.
@@ -322,40 +323,25 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   children: [
                     Column(
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Sans("First Name", 16.0),
-                            SizedBox(height: 5),
-                            SizedBox(
-                              width: 350,
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: "Enter first name",
-                                  hintStyle: GoogleFonts.poppins(fontSize: 14),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.teal),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10.0),
-                                    ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.tealAccent,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        TextForm(heading: "First Name", width: 350, hitText: "Enter first name"),
+                        SizedBox(height: 15.0),
+                        TextForm(heading: "Email", width: 350, hitText: "Enter email"),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        TextForm(heading: "Last Name", width: 350, hitText: "Enter last name"),
+                        SizedBox(height: 15.0),
+                        TextForm(heading: "Phone number", width: 350, hitText: "Enter phone number"),
                       ],
                     ),
                   ],
+                ),
+                TextForm(
+                  heading: "Message",
+                  width: widthDevice/1.5,
+                  hitText: "Enter your message",
+                  maxLine: 5,
                 ),
               ],
             ),

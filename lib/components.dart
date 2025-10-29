@@ -65,10 +65,7 @@ class SansBold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-        fontWeight: FontWeight.bold,
-      ),
+      style: GoogleFonts.openSans(fontSize: size, fontWeight: FontWeight.bold),
     );
   }
 }
@@ -80,13 +77,49 @@ class Sans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-      ),
-    );
+    return Text(text, style: GoogleFonts.openSans(fontSize: size));
   }
 }
 
+class TextForm extends StatelessWidget {
+  final String heading;
+  final double width;
+  final String hitText;
+  final int? maxLine;
+  const TextForm({
+    super.key,
+    required this.heading,
+    required this.width,
+    required this.hitText,
+    this.maxLine,
+  });
 
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Sans(heading, 16.0),
+        SizedBox(height: 5),
+        SizedBox(
+          width: width,
+          child: TextFormField(
+            maxLines: maxLine, // null means unlimited lines
+            decoration: InputDecoration(
+              hintText: hitText,
+              hintStyle: GoogleFonts.poppins(fontSize: 14),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.teal),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.tealAccent, width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
