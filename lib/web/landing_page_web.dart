@@ -20,7 +20,32 @@ class _LandingPageWebState extends State<LandingPageWeb> {
     It helps organize the major layout components of a Material Design app.
      */
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 72.0,
+              backgroundColor: Colors.tealAccent,
+              child: CircleAvatar(
+                radius: 70.0,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage("assets/myImage.png"),
+              ),
+            ),
+            SizedBox(height: 15.0),
+            SansBold("Chinmay Sahoo", 30.0),
+            SizedBox(height: 15.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset("assets/instagram.png", width: 35.0, filterQuality: FilterQuality.high),
+              ],
+            ),
+          ],
+        )
+      ),
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
