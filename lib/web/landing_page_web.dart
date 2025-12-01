@@ -13,7 +13,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
-    var widthDevice  = MediaQuery.of(context).size.width;
+    var widthDevice = MediaQuery.of(context).size.width;
     /*
     Scaffold is a Flutter widget that provides a basic visual layout structure for an app.
     It includes standard UI elements like an app bar, drawer, floating action button, and a body for your main content.
@@ -239,73 +239,9 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Card(
-                      elevation: 30.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/webL.png",
-                              height: 200,
-                              width: 200,
-                            ),
-                            SizedBox(height: 10.0),
-                            SansBold("Web development", 15),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 30.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/app.png",
-                              height: 200,
-                              width: 200,
-                              fit: BoxFit.contain,
-                            ),
-                            SizedBox(height: 10.0),
-                            SansBold("App development", 15),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 30.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/firebase.png",
-                              height: 200,
-                              width: 200,
-                            ),
-                            SizedBox(height: 10.0),
-                            SansBold("Back-end development", 15),
-                          ],
-                        ),
-                      ),
-                    ),
+                    AnimatedCardWeb(imagePath: "assets/app.png", text: "App development", fit: BoxFit.contain, reverse: true),
+                    AnimatedCardWeb(imagePath: "assets/firebase.png", text: "Back-end development", fit: BoxFit.contain, reverse: true),
+                    AnimatedCardWeb(imagePath: "assets/webL.png", text: "Web Development", fit: BoxFit.contain, reverse: true),
                   ],
                 ),
               ],
@@ -323,23 +259,39 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   children: [
                     Column(
                       children: [
-                        TextForm(heading: "First Name", width: 350.0, hintText: "Enter first name"),
+                        TextForm(
+                          heading: "First Name",
+                          width: 350.0,
+                          hintText: "Enter first name",
+                        ),
                         SizedBox(height: 5.0),
-                        TextForm(heading: "Email", width: 350.0, hintText: "Enter email"),
+                        TextForm(
+                          heading: "Email",
+                          width: 350.0,
+                          hintText: "Enter email",
+                        ),
                       ],
                     ),
                     Column(
                       children: [
-                        TextForm(heading: "Last Name", width: 350.0, hintText: "Enter last name"),
+                        TextForm(
+                          heading: "Last Name",
+                          width: 350.0,
+                          hintText: "Enter last name",
+                        ),
                         SizedBox(height: 5.0),
-                        TextForm(heading: "Phone number", width: 350.0, hintText: "Enter phone number"),
+                        TextForm(
+                          heading: "Phone number",
+                          width: 350.0,
+                          hintText: "Enter phone number",
+                        ),
                       ],
                     ),
                   ],
                 ),
                 TextForm(
                   heading: "Message",
-                  width: widthDevice/1.5,
+                  width: widthDevice / 1.5,
                   hintText: "Enter your message",
                   maxLines: 5,
                 ),
