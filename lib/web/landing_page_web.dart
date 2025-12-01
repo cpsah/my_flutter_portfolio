@@ -126,7 +126,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   flex: 1,
                   child: Image.asset(
                     "assets/web.jpg",
-                    height: heightDevice / 3.0,
+                    height: widthDevice / 1.9,
                   ),
                 ),
                 SizedBox(width: 20.0),
